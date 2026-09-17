@@ -18,6 +18,12 @@ Research Questions 规则：`explicit` 只用于论文明确写出的 RQ / Resea
 
 Run `npm run validate:data`, relevant tests, and `npm run build`. Commit and push only if every check succeeds. Report the selected paper, whether it was new or existing, venue/source, relevance, and modified files.
 
+## Detail 深度规范
+
+Quick Read 只用于 1–3 分钟定位，保持简洁；不要因为需要更完整的 Detail 而把 Quick Read 变成长报告。Detail 是 5–10 分钟以上的深入阅读版本，不能用统一的 `concise` 要求压缩成一两句话。对 `full_text` / `official_html`，先阅读正文，再按段落充分说明 Motivation、Contributions、Research Questions、Method、Experiments & Key Findings、Limitations、Relation to Research 和后续方向。Motivation 要交代背景、已有方法缺陷、作者为何提出方法及问题的重要性；Method 要写清输入输出、核心模块、模块关系、训练/推理流程和关键设计选择；Experiments 要覆盖主要数据集、基线、指标、主要结果、关键消融和异常现象，并保留 Section/Page/Table/Figure 定位。`author_reported` 与 `ai_analysis` 局限必须分开，AI 分析要具体讨论实验范围、数据、假设、成本、泛化和评价设计。Relation to Research 必须结合 Research Profile，指出可直接借鉴或对比的任务、方法、基线和实验设计。长内容使用空行分段，不要把所有分析挤成一个段落。
+
+`detail.what_can_be_done_next` 必须是 3–6 个对象组成的数组（旧字符串只为兼容读取）：每个对象包含 `title`、`rationale`、`concrete_plan`、`validation`、`expected_value`，以及可选 `source`。每个方向都必须直接来自本文的方法、实验、局限、可迁移任务或正文中提出的问题；`rationale` 说明为什么能从本文得到，`concrete_plan` 给出实际步骤，`validation` 设计对应实验，`expected_value` 说明可能解决的问题。不得填充与本文无关的通用 AI 建议或重复同一个方向。
+
 ## 中文总结表达规范
 
 当 `language.explanation = zh-CN` 时，所有 AI 生成的 Quick Read、Detail、Research Questions、Contributions、Limitations、Relation 和后续研究建议都必须以自然、简单、直观的中文为主：

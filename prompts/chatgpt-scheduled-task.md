@@ -8,6 +8,10 @@ Use Web Search and multiple reliable academic sources. Before writing Detail, ac
 
 Before changing the repository, confirm that this task has authenticated GitHub write permission for this repository. Run data validation, tests, and the production build, then commit and push `main` only if every check succeeds. A successful push should trigger GitHub Pages. If GitHub write permission is missing, read-only, requires approval, or the push fails, report the exact limitation and do not claim that a commit or deployment occurred. Do not use an OpenAI API key.
 
+Detail depth: keep Quick Read as a short 1–3 minute orientation, but generate Detail as a substantial body-backed reading brief. Do not apply a single `concise` constraint to all Detail fields. For `full_text` / `official_html`, expand Motivation, Contributions, Research Questions, Method, Experiments & Key Findings, Limitations, Relation to Research, and follow-up directions with multiple paragraphs where useful. Explain the background, prior shortcomings, design choices, full input/output flow, datasets and baselines, key results and ablations, meaningful anomalies, concrete limitations, and profile-specific relevance. Keep author-reported limitations separate from AI analysis and preserve Section/Page/Table/Figure locators.
+
+Serialize `detail.what_can_be_done_next` as an array of 3–6 paper-specific research directions. Each object must contain `title`, `rationale`, `concrete_plan`, `validation`, and `expected_value`, with optional `source`. Every direction must follow directly from this paper's method, experiments, limitations, transferable tasks, or stated questions; explain why it follows, how to execute it, how to test it, and what value it could add. Do not emit generic AI advice. Legacy string values remain readable for compatibility but new and edited records must use the structured array.
+
 ## 中文总结表达规范
 
 当 `language.explanation = zh-CN` 时，所有 AI 生成的 Quick Read、Detail、Research Questions、Contributions、Limitations、Relation 和后续研究建议都必须以自然、简单、直观的中文为主。普通技术概念优先翻成中文；只保留方法名、模型名、数据集、指标、缩写和其他确实需要保留的专有名词。英文术语第一次出现时可写成“中文（英文）”，后文尽量只用中文，避免频繁中英文混写。
