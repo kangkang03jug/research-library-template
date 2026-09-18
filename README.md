@@ -26,6 +26,8 @@ My secondary research interests are <OPTIONAL_INTERESTS>.
 Please create the GitHub repository, configure the research profile, build, test, deploy GitHub Pages, and prepare the daily research automation.
 ```
 
+Bootstrap only needs your name and research direction. If no explanation language is specified, it defaults to `zh-CN`. In Chinese mode, Codex must write `research_scope.primary[0]` and `profile.description` in natural Chinese for the homepage Hero, even when the input direction is English; standard English names and abbreviations may remain in `research_scope.secondary`. `library_name` is a repository/brand label and does not serve as the oversized Hero title. The Hero labels are `研究知识库 · <researcher>` and `研究知识库` in Chinese mode, and `Research Library · <researcher>` and `Research Library` in English mode. Validation rejects a Chinese profile whose primary direction or description has no Chinese text.
+
 4. Codex should create an independent repository, configure the profile and topic taxonomy, clear production examples, build/test/deploy Pages, generate a research-specific ChatGPT Scheduled Task prompt, and guide you through creating the daily task in ChatGPT.
 5. If GitHub, GitHub App, Cloudflare, or Codex login asks for a one-time authorization, complete that authorization in the official UI and return to Codex.
 
@@ -47,9 +49,10 @@ Research Direction → Codex → Research Profile → GitHub Repository
 profile:
   researcher: 'Your Name'
   library_name: 'Your Research Library'
+  description: '围绕你的研究方向，整理相关论文、方法与可复现研究证据。'
 research_scope:
   primary:
-    - 'Your Primary Research Direction'
+    - '你的研究方向'
   secondary:
     - 'Optional Secondary Direction'
 ```

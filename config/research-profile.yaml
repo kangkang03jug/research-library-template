@@ -1,10 +1,10 @@
 profile:
   researcher: 'Your Name'
   library_name: 'Your Research Library'
-  description: 'A calm, searchable research knowledge base.'
+  description: '围绕你的研究方向，整理相关论文、方法与可复现研究证据。'
 research_scope:
   primary:
-    - 'Your Primary Research Direction'
+    - '你的研究方向'
   secondary: []
 paper_selection:
   recent_year_window: 3
